@@ -1,0 +1,87 @@
+{
+  "status": "healthy",
+  "timestamp": "2026-04-03T18:09:16.089172",
+  "metrics": {
+    "storage": {
+      "l1": {
+        "exists": true,
+        "size_mb": 0.04,
+        "max_size_mb": 500,
+        "usage_percent": 0.01,
+        "file_count": 1
+      },
+      "l2": {
+        "exists": true,
+        "size_mb": 0.04,
+        "max_size_mb": 2000,
+        "usage_percent": 0.0,
+        "file_count": 1
+      },
+      "l3": {
+        "exists": true,
+        "size_mb": 0.04,
+        "max_size_mb": 10000,
+        "usage_percent": 0.0,
+        "file_count": 1
+      }
+    },
+    "database": {
+      "l1": {
+        "exists": true,
+        "status": "healthy",
+        "tables": [
+          "memories",
+          "memory_index",
+          "system_config"
+        ],
+        "record_count": 0,
+        "size_mb": 0.04,
+        "integrity": "ok"
+      },
+      "l2": {
+        "exists": true,
+        "status": "healthy",
+        "tables": [
+          "memories",
+          "memory_index",
+          "system_config"
+        ],
+        "record_count": 0,
+        "size_mb": 0.04,
+        "integrity": "ok"
+      },
+      "l3": {
+        "exists": true,
+        "status": "healthy",
+        "tables": [
+          "memories",
+          "memory_index",
+          "system_config"
+        ],
+        "record_count": 0,
+        "size_mb": 0.04,
+        "integrity": "ok"
+      }
+    },
+    "performance": {
+      "l1": {
+        "records_24h": 0,
+        "records_7d": 0
+      },
+      "l2": {
+        "records_24h": 0,
+        "records_7d": 0
+      },
+      "l3": {
+        "records_24h": 0,
+        "records_7d": 0
+      }
+    },
+    "alerts": []
+  },
+  "summary": {
+    "total_alerts": 0,
+    "critical_alerts": 0,
+    "warning_alerts": 0
+  }
+}

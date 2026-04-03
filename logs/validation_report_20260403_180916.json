@@ -1,0 +1,52 @@
+{
+  "status": "pass",
+  "summary": {
+    "total_checks": 5,
+    "passed": 5,
+    "failed": 0,
+    "warnings": 0,
+    "skipped": 0
+  },
+  "results": [
+    {
+      "check_type": "checksum",
+      "status": "pass",
+      "message": "所有 0 条记录校验和验证通过",
+      "details": {
+        "total_records": 0
+      },
+      "timestamp": "2026-04-03T18:09:16.090003"
+    },
+    {
+      "check_type": "schema",
+      "status": "pass",
+      "message": "所有层模式验证通过",
+      "details": {
+        "layers_checked": [
+          "l1",
+          "l2",
+          "l3"
+        ]
+      },
+      "timestamp": "2026-04-03T18:09:16.090976"
+    },
+    {
+      "check_type": "referential",
+      "status": "pass",
+      "message": "引用完整性验证通过",
+      "details": {},
+      "timestamp": "2026-04-03T18:09:16.092027"
+    },
+    {
+      "check_type": "accessibility",
+      "status": "pass",
+      "message": "所有存储路径可访问",
+      "details": {
+        "paths_checked": 3
+      },
+      "timestamp": "2026-04-03T18:09:16.092166"
+    }
+  ],
+  "duration_seconds": 0.003558,
+  "timestamp": "2026-04-03T18:09:16.092201"
+}

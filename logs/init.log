@@ -1,0 +1,34 @@
+2026-04-03 18:09:01,342 - MemoryInit - INFO - 
+============================================================
+2026-04-03 18:09:01,342 - MemoryInit - INFO - Memory-Plus 数据库初始化
+2026-04-03 18:09:01,342 - MemoryInit - INFO - ============================================================
+
+2026-04-03 18:09:01,342 - MemoryInit - INFO - 初始化 L1 层数据库...
+2026-04-03 18:09:01,343 - MemoryInit - ERROR - ✗ L1 数据库初始化失败：near "INDEX": syntax error
+2026-04-03 18:09:01,343 - MemoryInit - INFO - 初始化 L2 层数据库...
+2026-04-03 18:09:01,343 - MemoryInit - ERROR - ✗ L2 数据库初始化失败：near "INDEX": syntax error
+2026-04-03 18:09:01,343 - MemoryInit - INFO - 初始化 L3 层数据库...
+2026-04-03 18:09:01,343 - MemoryInit - ERROR - ✗ L3 数据库初始化失败：near "INDEX": syntax error
+2026-04-03 18:09:01,343 - MemoryInit - INFO - 
+============================================================
+2026-04-03 18:09:01,343 - MemoryInit - INFO - 数据库初始化完成
+2026-04-03 18:09:01,343 - MemoryInit - INFO - 成功：0/3
+2026-04-03 18:09:01,343 - MemoryInit - INFO - ============================================================
+
+2026-04-03 18:09:12,254 - MemoryInit - INFO - 
+============================================================
+2026-04-03 18:09:12,255 - MemoryInit - INFO - Memory-Plus 数据库初始化
+2026-04-03 18:09:12,255 - MemoryInit - INFO - ============================================================
+
+2026-04-03 18:09:12,255 - MemoryInit - INFO - 初始化 L1 层数据库...
+2026-04-03 18:09:12,256 - MemoryInit - INFO - ✓ L1 数据库初始化成功：/Users/bot-eva/.openclaw/workspace/memory-plus/storage/l1/main.sqlite
+2026-04-03 18:09:12,256 - MemoryInit - INFO - 初始化 L2 层数据库...
+2026-04-03 18:09:12,258 - MemoryInit - INFO - ✓ L2 数据库初始化成功：/Users/bot-eva/.openclaw/workspace/memory-plus/storage/l2/main.sqlite
+2026-04-03 18:09:12,258 - MemoryInit - INFO - 初始化 L3 层数据库...
+2026-04-03 18:09:12,260 - MemoryInit - INFO - ✓ L3 数据库初始化成功：/Users/bot-eva/.openclaw/workspace/memory-plus/storage/l3/main.sqlite
+2026-04-03 18:09:12,260 - MemoryInit - INFO - 
+============================================================
+2026-04-03 18:09:12,260 - MemoryInit - INFO - 数据库初始化完成
+2026-04-03 18:09:12,260 - MemoryInit - INFO - 成功：3/3
+2026-04-03 18:09:12,260 - MemoryInit - INFO - ============================================================
+

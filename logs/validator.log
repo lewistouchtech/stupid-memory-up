@@ -1,0 +1,27 @@
+2026-04-03 18:09:16,088 - MemoryValidator - INFO - 
+============================================================
+2026-04-03 18:09:16,088 - MemoryValidator - INFO - Memory-Plus 验证任务启动
+2026-04-03 18:09:16,088 - MemoryValidator - INFO - 启动时间：2026-04-03T18:09:16.088631
+2026-04-03 18:09:16,088 - MemoryValidator - INFO - ============================================================
+
+2026-04-03 18:09:16,088 - MemoryValidator - INFO - 开始校验和验证 (层：all)
+2026-04-03 18:09:16,090 - MemoryValidator - INFO - 校验和验证完成：pass - 所有 0 条记录校验和验证通过
+2026-04-03 18:09:16,090 - MemoryValidator - INFO - 开始模式验证 (层：all)
+2026-04-03 18:09:16,090 - MemoryValidator - INFO - 模式验证完成：pass - 所有层模式验证通过
+2026-04-03 18:09:16,091 - MemoryValidator - INFO - 开始引用完整性验证
+2026-04-03 18:09:16,092 - MemoryValidator - INFO - 引用完整性验证完成：pass - 引用完整性验证通过
+2026-04-03 18:09:16,092 - MemoryValidator - INFO - 开始可访问性验证
+2026-04-03 18:09:16,092 - MemoryValidator - INFO - 可访问性验证完成：pass - 所有存储路径可访问
+2026-04-03 18:09:16,092 - MemoryValidator - INFO - 验证报告已保存：/Users/bot-eva/.openclaw/workspace/memory-plus/logs/validation_report_20260403_180916.json
+2026-04-03 18:09:16,092 - MemoryValidator - INFO - 
+============================================================
+2026-04-03 18:09:16,092 - MemoryValidator - INFO - 验证任务完成
+2026-04-03 18:09:16,092 - MemoryValidator - INFO - ============================================================
+2026-04-03 18:09:16,092 - MemoryValidator - INFO - 总检查数：5
+2026-04-03 18:09:16,092 - MemoryValidator - INFO - 通过：5
+2026-04-03 18:09:16,092 - MemoryValidator - INFO - 失败：0
+2026-04-03 18:09:16,092 - MemoryValidator - INFO - 警告：0
+2026-04-03 18:09:16,092 - MemoryValidator - INFO - 跳过：0
+2026-04-03 18:09:16,092 - MemoryValidator - INFO - 总耗时：0.00 秒
+2026-04-03 18:09:16,092 - MemoryValidator - INFO - ============================================================
+
