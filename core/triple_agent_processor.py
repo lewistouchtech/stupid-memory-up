@@ -7,6 +7,7 @@
 import asyncio
 import json
 import time
+import re
 from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass
 from pathlib import Path
@@ -140,9 +141,23 @@ class TripleAgentProcessor:
             # 尝试多种方式提取 JSON
             json_str = None
             
+            # 预处理：移除思考过程
+            # 如果内容包含 "Thinking Process" 或类似标记，只保留后面的 JSON
+            thinking_markers = ['Thinking Process:', '思考过程：', '思考：', '分析：']
+            for marker in thinking_markers:
+                if marker in content:
+                    # 找到 marker 后的第一个 {
+                    marker_pos = content.find(marker)
+                    if marker_pos >= 0:
+                        json_start = content.find('{', marker_pos)
+                        if json_start >= 0:
+                            content = content[json_start:]
+                            break
+            
             # 方法 1: 直接解析整个内容
-            if content.startswith('{') and content.endswith('}'): 
-                json_str = content
+            content_stripped = content.strip()
+            if content_stripped.startswith('{') and content_stripped.endswith('}'): 
+                json_str = content_stripped
             
             # 方法 2: 从 markdown 代码块提取
             elif '```json' in content:
@@ -165,10 +180,50 @@ class TripleAgentProcessor:
                     if end > start:
                         json_str = content[start:end+1]
             
+            # 方法 4: 处理截断的 JSON（尝试补全）
             if json_str is None:
-                raise ValueError(f"无法从响应中提取 JSON: {content[:100]}")
+                start = content.find('{')
+                if start >= 0:
+                    json_str = content[start:]
+                    # 尝试补全缺失的 }
+                    open_braces = json_str.count('{')
+                    close_braces = json_str.count('}')
+                    if open_braces > close_braces:
+                        json_str += '}' * (open_braces - close_braces)
             
-            response_data = json.loads(json_str)
+            # 方法 5: 使用正则表达式提取 JSON 对象
+            if json_str is None:
+                # 匹配最外层 JSON 对象
+                pattern = r'\{(?:[^{}]|(?:\{(?:[^{}]|(?:\{[^{}]*\}))*\}))*\}'
+                matches = re.findall(pattern, content, re.DOTALL)
+                if matches:
+                    # 选择最长的匹配
+                    json_str = max(matches, key=len)
+            
+            if json_str is None:
+                raise ValueError(f"无法从响应中提取 JSON: {content[:200]}")
+            
+            # 清理 JSON 字符串
+            json_str = json_str.strip()
+            
+            # 尝试解析 JSON
+            try:
+                response_data = json.loads(json_str)
+            except json.JSONDecodeError as e:
+                # 尝试修复常见的 JSON 错误
+                # 1. 移除尾部的逗号
+                json_str = json_str.rstrip().rstrip(',').rstrip()
+                # 2. 确保以 } 结尾
+                if not json_str.endswith('}'):
+                    json_str += '}'
+                # 3. 替换单引号为双引号
+                json_str = json_str.replace("'", '"')
+                # 4. 移除控制字符
+                json_str = ''.join(c for c in json_str if ord(c) >= 32 or c in '\n\r\t')
+                try:
+                    response_data = json.loads(json_str)
+                except json.JSONDecodeError as e2:
+                    raise ValueError(f"JSON 解析失败：{str(e)[:100]}, 原始内容：{content[:300]}")
             
             latency_ms = (time.time() - start_time) * 1000
             
