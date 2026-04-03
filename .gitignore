@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+logs/*.log
+logs/*.json
+
+# Storage (SQLite databases)
+storage/**/*.sqlite
+storage/**/*.db
+
+# Metrics
+metrics/*.json
+
+# Config (may contain secrets)
+config.yaml
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test artifacts
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
